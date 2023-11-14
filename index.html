@@ -8,6 +8,19 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
     />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+    /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -78,7 +91,7 @@
     </nav>
     <div class="container mt-5 container-form">
       <!-- Toast para mensajes de validación -->
-      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div class="toast-container position-fixed top-0 end-0 p-3">
         <div
           id="toastValidacion"
           class="toast align-items-center text-bg-danger border-0"
@@ -88,7 +101,7 @@
         >
           <div class="d-flex">
             <div class="toast-body">
-              Por favor, completa todos los campos requeridos.
+              Completa todos los campos de este paso.
             </div>
             <button
               type="button"
@@ -123,6 +136,7 @@
         <form class="needs-validation" novalidate>
           <!-- Paso 1 -->
           <div class="step step-1 active" data-step-number="1">
+            <p class="title-1-form pt-1">Datos del paciente</p>
             <div class="form-group">
               <div class="form-floating mb-3">
                 <select
@@ -140,17 +154,55 @@
                 <label for="tipoPaciente">Soy paciente</label>
                 <div class="invalid-feedback">Selecciona una opción.</div>
               </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="emailPaciente"
-                  placeholder="name@example.com"
-                  required
-                />
-                <label for="emailPaciente">Correo electrónico</label>
-                <div class="invalid-feedback">
-                  Ingresa tu correo electrónico.
+              <div class="labels-flex">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombrePaciente"
+                    placeholder="Nombres"
+                    required
+                  />
+                  <label for="nombrePaciente">Nombres</label>
+                  <div class="invalid-feedback">Ingresa tus nombres</div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="apellidosPaciente"
+                    placeholder="Apellidos"
+                    required
+                  />
+                  <label for="nombrePaciente">Apellidos</label>
+                  <div class="invalid-feedback">Ingresa tus apellidos</div>
+                </div>
+              </div>
+            </div>
+            <p class="title-1-form">Información de la cuenta</p>
+            <div class="form-group">
+              <div class="labels-flex">
+                <div class="form-floating">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="emailPaciente"
+                    placeholder="Correo electrónico"
+                    required
+                  />
+                  <label for="emailPaciente">Correo electrónico</label>
+                  <div class="invalid-feedback">Ingresa tus nombres</div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="passwordPaciente"
+                    placeholder="Contraseña"
+                    required
+                  />
+                  <label for="passwordPaciente">Contraseña</label>
+                  <div class="invalid-feedback">Ingresa tus apellidos</div>
                 </div>
               </div>
             </div>
@@ -162,21 +214,83 @@
           </div>
           <!-- Paso 2 -->
           <div class="step step-2" data-step-number="2">
+            <p class="title-1-form">Ingresa tus datos</p>
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="direccionPaciente"
+                placeholder="Dirección"
+                required
+              />
+              <label for="nombrePaciente">Dirección</label>
+              <div class="invalid-feedback">Ingresa tu dirección</div>
+            </div>
             <div class="form-group">
-              <label for="campo2">Campo 2</label>
-              <input type="text" class="form-control" id="campo2" required />
+              <div class="labels-flex">
+                <div class="form-floating">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="puebloPaciente"
+                    placeholder="Pueblo"
+                    required
+                  />
+                  <label for="puebloPaciente">Pueblo</label>
+                  <div class="invalid-feedback">Ingresa tu pueblo</div>
+                </div>
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="codigoZIPPaciente"
+                    placeholder="Código ZIP"
+                    required
+                  />
+                  <label for="codigoZIPPaciente">Código ZIP</label>
+                  <div class="invalid-feedback">Ingresa tu código ZIP</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="labels-flex">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="datepicker-flatpickr"
+                    placeholder="Pueblo"
+                    required
+                  />
+                  <label for="puebloPaciente">Fecha de nacimiento</label>
+                  <div class="invalid-feedback">
+                    Ingrese su fecha de nacimiento
+                  </div>
+                </div>
+                <div class="form-floating mb-3">
+                  <select
+                    class="form-select"
+                    id="sexoPaciente"
+                    aria-label="Floating label select example"
+                    required
+                  >
+                    <option selected disabled value="">
+                      Selecciona una opción
+                    </option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Otros">Otros</option>
+                  </select>
+                  <label for="sexoPaciente">Sexo</label>
+                  <div class="invalid-feedback">Selecciona una opción.</div>
+                </div>
+              </div>
             </div>
             <div class="content-buttons">
-              <button
-                type="button"
-                class="btn btn-secondary anterior text-bg-primary"
-              >
-                Anterior <i class="bi bi-arrow-left-circle"></i>
+              <button type="button" class="btn btn-secondary anterior">
+                <i class="bi bi-arrow-left-circle"></i> Anterior
               </button>
-              <button
-                type="button"
-                class="btn btn-primary siguiente text-bg-primary"
-              >
+              <button type="button" class="btn btn-primary siguiente">
                 Siguiente <i class="bi bi-arrow-right-circle"></i>
               </button>
             </div>
@@ -238,5 +352,10 @@
     ></script>
     <script></script>
     <script src="/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script> -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script> -->
   </body>
 </html>

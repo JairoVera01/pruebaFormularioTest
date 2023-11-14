@@ -17,14 +17,16 @@ $(document).ready(function () {
 
   function validarCampos() {
     var allValid = true;
-    $(".step-" + pasoActual).find("input, select, textarea").each(function () {
-      if (!this.checkValidity()) {
-        $(this).addClass("is-invalid");
-        allValid = false;
-      } else {
-        $(this).removeClass("is-invalid");
-      }
-    });
+    // $(".step-" + pasoActual)
+    //   .find("input, select, textarea")
+    //   .each(function () {
+    //     if (!this.checkValidity()) {
+    //       $(this).addClass("is-invalid");
+    //       allValid = false;
+    //     } else {
+    //       $(this).removeClass("is-invalid");
+    //     }
+    //   });
     return allValid;
   }
 
@@ -44,5 +46,22 @@ $(document).ready(function () {
       pasoActual--;
       actualizarFormulario();
     }
+  });
+});
+
+// $(document).ready(function () {
+//   $(".datepicker").datepicker({
+//     // Opciones de personalización
+//   });
+// });
+// document.addEventListener("DOMContentLoaded", function () {
+//   var picker = new Pikaday({
+//     field: document.getElementById("datepicker-pikaday"),
+//     // Otras opciones de personalización
+//   });
+// });
+document.addEventListener("DOMContentLoaded", function () {
+  flatpickr("#datepicker-flatpickr", {
+    // Opciones de personalización
   });
 });

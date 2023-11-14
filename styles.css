@@ -122,7 +122,6 @@ a {
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-
   width: 75%;
 }
 
@@ -135,9 +134,61 @@ a {
 .content-buttons {
   width: 100%;
   display: flex;
-  padding-top: 12px;
+
   justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 1rem;
+}
+
+.labels-flex {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.labels-flex > div {
+  width: 100%;
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+  .content-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .labels-flex {
+    gap: 1rem;
+  }
+}
+
+/* Estilos para pantallas medianas (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .labels-flex {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .content-buttons {
+    gap: 1rem;
+  }
+}
+
+/* Estilos para pantallas grandes (PC y laptops) */
+@media (min-width: 1025px) {
+  .labels-flex {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .content-buttons {
+    gap: 1rem;
+  }
+}
+
+.title-1-form {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
 }
