@@ -77,7 +77,30 @@
       </div>
     </nav>
     <div class="container mt-5 container-form">
-      <div id="formulario-multistep " class="content-form">
+      <!-- Toast para mensajes de validación -->
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div
+          id="toastValidacion"
+          class="toast align-items-center text-bg-danger border-0"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="d-flex">
+            <div class="toast-body">
+              Por favor, completa todos los campos requeridos.
+            </div>
+            <button
+              type="button"
+              class="btn-close me-2 m-auto"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+        </div>
+      </div>
+
+      <div id="formulario-multistep" class="content-form">
         <!-- Paso Actual -->
         <div class="text-center mb-3">
           <h3>Paso <span id="paso-actual">1</span> de 5</h3>
@@ -97,36 +120,51 @@
         </div>
 
         <!-- Formulario -->
-        <form>
+        <form class="needs-validation" novalidate>
           <!-- Paso 1 -->
-          <div class="step step-1 active">
+          <div class="step step-1 active" data-step-number="1">
             <div class="form-group">
-              <p class="mb-3">Soy paciente</p>
-              <div>
-                <div class="form-floating mb-3">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="floatingInput"
-                    placeholder="name@example.com"
-                  />
-                  <label for="floatingInput">Nombres y apellidos</label>
+              <div class="form-floating mb-3">
+                <select
+                  class="form-select"
+                  id="tipoPaciente"
+                  aria-label="Floating label select example"
+                  required
+                >
+                  <option selected disabled value="">
+                    Selecciona una opción
+                  </option>
+                  <option value="1">Nuevo</option>
+                  <option value="2">Renovación</option>
+                </select>
+                <label for="tipoPaciente">Soy paciente</label>
+                <div class="invalid-feedback">Selecciona una opción.</div>
+              </div>
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailPaciente"
+                  placeholder="name@example.com"
+                  required
+                />
+                <label for="emailPaciente">Correo electrónico</label>
+                <div class="invalid-feedback">
+                  Ingresa tu correo electrónico.
                 </div>
               </div>
             </div>
-
             <div class="content-buttons">
               <button type="button" class="btn btn-primary siguiente">
                 Siguiente <i class="bi bi-arrow-right-circle"></i>
               </button>
             </div>
           </div>
-
           <!-- Paso 2 -->
-          <div class="step step-2">
+          <div class="step step-2" data-step-number="2">
             <div class="form-group">
               <label for="campo2">Campo 2</label>
-              <input type="text" class="form-control" id="campo2" />
+              <input type="text" class="form-control" id="campo2" required />
             </div>
             <div class="content-buttons">
               <button
@@ -144,10 +182,10 @@
             </div>
           </div>
           <!-- Paso 3 -->
-          <div class="step step-3">
+          <div class="step step-3" data-step-number="3">
             <div class="form-group">
               <label for="campo2">Campo 3</label>
-              <input type="text" class="form-control" id="campo2" />
+              <input type="text" class="form-control" id="campo2" required />
             </div>
             <button type="button" class="btn btn-secondary anterior">
               Anterior <i class="bi bi-arrow-left-circle"></i>
@@ -160,10 +198,10 @@
             </button>
           </div>
           <!-- Paso 4 -->
-          <div class="step step-4">
+          <div class="step step-4" data-step-number="4">
             <div class="form-group">
               <label for="campo2">Campo 4</label>
-              <input type="text" class="form-control" id="campo2" />
+              <input type="text" class="form-control" id="campo2" required />
             </div>
             <button
               type="button"
@@ -180,22 +218,17 @@
           </div>
 
           <!-- Último Paso -->
-          <div class="step step-5">
-            <label for="campo5">Paso 5</label>
+          <div class="step step-5" data-step-number="5">
             <!-- Contenido del Último Paso -->
-            <button
-              type="button"
-              class="btn btn-secondary anterior text-bg-primary"
-            >
-              Anterior
+            <button type="button" class="btn btn-secondary anterior">
+              Anterior <i class="bi bi-arrow-left-circle"></i>
             </button>
-            <button type="submit" class="btn btn-success text-bg-primary">
-              Enviar
-            </button>
+            <button type="submit" class="btn btn-success">Enviar</button>
           </div>
         </form>
       </div>
     </div>
+
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script
@@ -203,6 +236,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script></script>
     <script src="/main.js"></script>
   </body>
 </html>
