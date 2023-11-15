@@ -34,39 +34,39 @@ $(document).ready(function () {
 
   function validarCampos() {
     var allValid = true;
-    // $(".step-" + pasoActual)
-    //   .find("input, select, textarea")
-    //   .each(function () {
-    //     // Validar email si el campo es de tipo email y no está vacío
-    //     if (
-    //       this.type === "email" &&
-    //       this.value !== "" &&
-    //       !validarEmail(this.value)
-    //     ) {
-    //       $(this).addClass("is-invalid");
-    //       showToast("Por favor, ingresa un correo electrónico válido.");
-    //       allValid = false;
-    //     }
-    //     // Validar teléfono si el campo es el de teléfono y no está vacío
-    //     else if (
-    //       this.id === "tlfPaciente" &&
-    //       this.value !== "" &&
-    //       !validarTelefono(this.value)
-    //     ) {
-    //       $(this).addClass("is-invalid");
-    //       showToast(
-    //         "Por favor, ingresa un número de teléfono válido en el formato (787) 555-1234."
-    //       );
-    //       allValid = false;
-    //     }
-    //     // Validar otros campos con checkValidity
-    //     else if (!this.checkValidity()) {
-    //       $(this).addClass("is-invalid");
-    //       allValid = false;
-    //     } else {
-    //       $(this).removeClass("is-invalid");
-    //     }
-    //   });
+    $(".step-" + pasoActual)
+      .find("input, select, textarea")
+      .each(function () {
+        // Validar email si el campo es de tipo email y no está vacío
+        if (
+          this.type === "email" &&
+          this.value !== "" &&
+          !validarEmail(this.value)
+        ) {
+          $(this).addClass("is-invalid");
+          showToast("Por favor, ingresa un correo electrónico válido.");
+          allValid = false;
+        }
+        // Validar teléfono si el campo es el de teléfono y no está vacío
+        else if (
+          this.id === "tlfPaciente" &&
+          this.value !== "" &&
+          !validarTelefono(this.value)
+        ) {
+          $(this).addClass("is-invalid");
+          showToast(
+            "Por favor, ingresa un número de teléfono válido en el formato (787) 555-1234."
+          );
+          allValid = false;
+        }
+        // Validar otros campos con checkValidity
+        else if (!this.checkValidity()) {
+          $(this).addClass("is-invalid");
+          allValid = false;
+        } else {
+          $(this).removeClass("is-invalid");
+        }
+      });
     return allValid;
   }
 
