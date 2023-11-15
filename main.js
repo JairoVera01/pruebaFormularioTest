@@ -17,16 +17,16 @@ $(document).ready(function () {
 
   function validarCampos() {
     var allValid = true;
-    // $(".step-" + pasoActual)
-    //   .find("input, select, textarea")
-    //   .each(function () {
-    //     if (!this.checkValidity()) {
-    //       $(this).addClass("is-invalid");
-    //       allValid = false;
-    //     } else {
-    //       $(this).removeClass("is-invalid");
-    //     }
-    //   });
+    $(".step-" + pasoActual)
+      .find("input, select, textarea")
+      .each(function () {
+        if (!this.checkValidity()) {
+          $(this).addClass("is-invalid");
+          allValid = false;
+        } else {
+          $(this).removeClass("is-invalid");
+        }
+      });
     return allValid;
   }
 
