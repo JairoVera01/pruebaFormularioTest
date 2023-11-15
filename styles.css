@@ -122,12 +122,18 @@ a {
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  width: 75%;
+  width: 78%;
 }
 
 @media (max-width: 768px) {
   .content-form {
     width: 100%;
+  }
+}
+
+@media (max-width: 991px) {
+  .content-form {
+    width: 850%;
   }
 }
 
