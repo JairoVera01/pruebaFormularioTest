@@ -190,7 +190,9 @@
                     required
                   />
                   <label for="emailPaciente">Correo electrónico</label>
-                  <div class="invalid-feedback">Ingresa tus nombres</div>
+                  <div class="invalid-feedback">
+                    Ingresa tu correo electrónico
+                  </div>
                 </div>
                 <div class="form-floating mb-3">
                   <input
@@ -227,16 +229,23 @@
             </div>
             <div class="form-group">
               <div class="labels-flex">
-                <div class="form-floating">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="puebloPaciente"
-                    placeholder="Pueblo"
+                <div class="form-floating mb-3">
+                  <select
+                    class="form-select"
+                    id="tipoPaciente"
+                    aria-label="Floating label select example"
                     required
-                  />
-                  <label for="puebloPaciente">Pueblo</label>
-                  <div class="invalid-feedback">Ingresa tu pueblo</div>
+                  >
+                    <option selected disabled value="">
+                      Selecciona un pueblo
+                    </option>
+                    <option value="1">Pueblo 1</option>
+                    <option value="2">Pueblo 2</option>
+                    <option value="3">Pueblo 3</option>
+                    <option value="4">Pueblo 4</option>
+                  </select>
+                  <label for="tipoPaciente">Pueblo</label>
+                  <div class="invalid-feedback">Selecciona un pueblo.</div>
                 </div>
                 <div class="form-floating mb-3">
                   <input
@@ -286,14 +295,17 @@
               </div>
               <div class="form-floating mb-3">
                 <input
-                  type="number"
+                  type="text"
                   class="form-control"
                   id="tlfPaciente"
-                  placeholder="N° Teléfono"
+                  placeholder="N° Teléfono (ej. (787) 555-1234)"
                   required
+                  maxlength="14"
                 />
                 <label for="tlfPaciente">Teléfono</label>
-                <div class="invalid-feedback">Ingresa tu N° de teléfono</div>
+                <div class="invalid-feedback">
+                  Ingresa tu N° de teléfono en el formato (787) 555-1234
+                </div>
               </div>
             </div>
             <div class="content-buttons">
@@ -321,16 +333,36 @@
                   <label for="pesoPaciente">Peso</label>
                   <div class="invalid-feedback">Ingresa tu peso</div>
                 </div>
-                <div class="form-floating mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="alturaPaciente"
-                    placeholder="Altura"
-                    required
-                  />
-                  <label for="alturaPaciente">Altura</label>
-                  <div class="invalid-feedback">Ingresa tu altura</div>
+                <div class="form-group-2">
+                  <div class="form-floating">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="alturaPacientePies"
+                      placeholder="Pies"
+                      required
+                    />
+                    <label for="alturaPacientePies">Altura en Pies</label>
+                    <div class="invalid-feedback">
+                      Ingresa la altura en pies
+                    </div>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="alturaPacientePulgadas"
+                      placeholder="Pulgadas"
+                      required
+                    />
+                    <label for="alturaPacientePulgadas"
+                      >Altura en Pulgadas</label
+                    >
+                    <div class="invalid-feedback">
+                      Ingresa la altura en pulgadas
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="form-floating mb-3">
@@ -727,16 +759,17 @@
     </div>
 
     <!-- SCRIPTS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-    <script></script>
-    <script src="/main.js"></script>
+    <!-- Primero, incluye la versión completa de jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Luego, incluye el script de Bootstrap Bundle que incluye Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Incluye Flatpickr si lo estás utilizando -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
+    <!-- Finalmente, incluye tu script personalizado -->
+    <script src="/main.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script> -->
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script> -->

@@ -341,3 +341,15 @@ a {
   color: #ffffff;
   background: #fb7179;
 }
+
+.form-group-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .form-group-2 {
+    grid-template-columns: 1fr;
+  }
+}
